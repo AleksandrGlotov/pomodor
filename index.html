@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomidor</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Pomodoro #1</h1>
+    <div class="timer">
+      <div class="timer__items">
+        <div class="timer__item timer__minutes">25</div>
+        <div>:</div>
+        <div class="timer__item timer__seconds">00</div>
+      </div>
+    </div>
+    <div id="btns">
+      <button class="btn btn_start" id="start">Start</button>
+      <button class="btn btn_pause" id="pause">Pause</button>
+      <button class="btn btn_reset" id="reset">Reset</button>
+    </div>
+    <div class="breaks">
+      <div class="breaks_item">
+        <h4 class="breaks_title">Pomodoro (pcs)</h4>
+        <div class="breaks_count">
+          <button class="btn_count" id="pomodoro-dec">-</button>
+          <div class="pomodoro">5</div>
+          <button class="btn_count" id="pomodoro-inc">+</button>
+        </div>
+      </div>
+      <div class="breaks_item">
+        <h4 class="breaks_title">Short break (min)</h4>
+        <div class="breaks_count">
+          <button class="btn_count" id="short-break-dec">-</button>
+          <div class="short-break">5</div>
+          <button class="btn_count" id="short-break-inc">+</button>
+        </div>
+      </div>
+      <div class="breaks_item">
+        <h4 class="breaks_title">Long break (min)</h4>
+        <div class="breaks_count">
+          <button class="btn_count" id="long-break-dec">-</button>
+          <div class="long-break">15</div>
+          <button class="btn_count" id="long-break-inc">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="tasks">
+      <input class="input-task" type="text" placeholder="add task"/>
+      <button class="add-task">+</button>
+    </div>
+    <div class="task-list">
+        <div class="task-items"></div>
+        <button class="task-clear">Clear task list</button>
+    </div>
+  </div>
+  <script src="timer.js"></script>
+  <script src="task.js"></script>
+</body>
+
+</html>
