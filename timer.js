@@ -1,8 +1,8 @@
 let timer;
-let workDuration = 1; //кол-во минут помодоро
+let workDuration = 25; //кол-во минут помодоро
 let shortBreakDuration = 5; //начальное кол-во минут короткого перерыва
 let longBreakDuration = 15; //начальное кол-во минут длинного перерыва
-let seconds = 3; //кол-во секунд
+let seconds = 60; //кол-во секунд
 
 let workMinutes = workDuration - 1;
 let breakCount = 1; //счетчик перерывов
@@ -61,7 +61,7 @@ const RemainingTime = () => {
         }
       }
     }
-    (pomodoroPieces !== 0) ? seconds = 3 : seconds = 0
+    (pomodoroPieces !== 0) ? seconds = 60 : seconds = 0
   }
   $minutes.textContent =
     workMinutes < 10 ? "0" + workMinutes : seconds == 60 ? workMinutes + 1 : workMinutes;
