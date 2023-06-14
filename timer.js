@@ -1,8 +1,8 @@
 let timer;
-let workDuration = 25; //кол-во минут помодоро
+let workDuration = 1; //кол-во минут помодоро
 let shortBreakDuration = 5; //начальное кол-во минут короткого перерыва
 let longBreakDuration = 15; //начальное кол-во минут длинного перерыва
-let seconds = 60; //кол-во секунд
+let seconds = 3; //кол-во секунд
 
 let workMinutes = workDuration - 1;
 let breakCount = 1; //счетчик перерывов
@@ -29,6 +29,8 @@ const btnLongBreakDecrement = document.getElementById("long-break-dec");
 const btnLongBreakIncrement = document.getElementById("long-break-inc");
 const btnLock = document.querySelectorAll(".btn_count, #start")
 
+const audio = new Audio("/images/bip.mp3");
+
 const RemainingTime = () => {
   console.log($title.textContent, breakCount, pomodoroPieces);
   seconds = seconds - 1;
@@ -38,6 +40,7 @@ const RemainingTime = () => {
     // при достижении таймера 0 увеличваем счетчик перерывов и делаем проверку
     // нечетные это помодоро, кратные 2,4,6 - короткие перерывы, кратные 9 - длинные
     if (workMinutes === -1) {
+      audio.play();
       breakCount++;
       if (breakCount % 8 === 0) {
         workMinutes = longBreakDuration - 1;
@@ -58,7 +61,7 @@ const RemainingTime = () => {
         }
       }
     }
-    (pomodoroPieces !== 0) ? seconds = 60 : seconds = 0
+    (pomodoroPieces !== 0) ? seconds = 3 : seconds = 0
   }
   $minutes.textContent =
     workMinutes < 10 ? "0" + workMinutes : seconds == 60 ? workMinutes + 1 : workMinutes;
